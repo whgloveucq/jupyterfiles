@@ -1,0 +1,91 @@
+#统一数据来源
+def get_source():
+    pro = ts.pro_api('5fb9551d1e4c7339259b68703d554c50dd7cebc016fcfc8dd11fd438')
+    return pro
+#股票列表
+def get_data():
+    df = get_source().stock_basic()
+    return df
+#交易日历
+def get_cal():
+        df_cal=get_source().trade_cal()
+        return df_cal
+#
+#获取沪股通成分,hs_type:SH,SZ
+def stock_kind(kind):
+        df_type = get_source().hs_const(hs_type=kind) 
+        return  df_type
+#上市公司基本信息  交易所代码 ，exchange_name-SSE上交所 SZSE深交所
+def company_info(exchange_name,ts_codes):
+    df_company =get_source().stock_company(exchange=exchange_name,ts_code=ts_codes, fields='ts_code,chairman,manager,secretary,reg_capital,setup_date,province,city,introduction,website,employees,main_business,business_scope')
+    return df_company
+#上市公司管理层
+def company_managers(ts_code,ann_date,start_date,end_date):
+        df_managers= get_source().stk_managers(ts_code=ts_code,ann_date=ann_date,start_date=start_date,end_date=end_date)
+        return  df_managers
+#管理层持股数
+def manager_stocks(ts_code,end_date):
+        df_stocks= get_source().stk_rewards(ts_code=ts_code,end_date=end_date)
+        return  df_stocks
+#IPO新股
+def new_stocks(start_date,end_date):
+        df_news= get_source().new_share(start_date=start_date, end_date=end_date)
+        return  df_news
+#股票的换手率问题
+#某日换手率前n名的股票 ，或某阶段换手率前n名的股票
+def turnover_n(trade_date,n):
+    turnover_n=get_source().daily_basic(trade_date=trade_date).sort_values(by='turnover_rate',ascending=False).ts_code.tolist()[:n]
+    return turnover_n
+#股票的成交额问题。
+def amount_n(trade_date,n):
+        amount_n=get_source().daily(trade_date=trade_date).sort_values(by='amount',ascending=False).ts_code.tolist()[:n]
+        return amount_n
+#换手率和成交额的交集
+def amount_turnover(trade_date,n):
+     return list(set(amount_n(trade_date,n))&set(turnover_n(trade_date,n)))
+#备用列表
+def get_bakdata(trade_date):
+    bak_data=get_source().bak_basic(trade_date=trade_date, fields='trade_date,ts_code,name,industry,pe')
+    return bak_data
+#股票池细化。
+
+#股票列表数据
+#基本状况、财务指标状况、行业市场声誉和市场潜力、公司声誉和公司潜力，公司人员状况、领导能力。
+df_stocks=get_data()
+# 1、需求超过三年的上市公司股票列表
+df_stocks_age_gt3=df_stocks.query('list_date <"20190101"')
+
+# df_stocks.query("ts_code.str.contains('002329.SZ|688271.SH|002514.SZ|688041.SH|688016.SH|002197.SZ')",engine="python")
+#20221207
+# 比如“ROE连续5年大于20%”“近两年营收增长率大于10%”“近两年净利润增长率大于10%”“上市时间大于3年”等
+df_stocks_age_gt3['industry']=df_stocks_age_gt3['industry'].apply(str)
+df_stocks_age_gt3.query("industry.str.contains('医|互联网')",engine="python")
+#如何获取ROE
+
+get_source().daily().query("ts_code=='002197.SZ'").head(10)
+
+for industry in df_stocks['industry'].unique():
+    if industry!=None:
+        print(industry)
+
+
+# from datetime import datetime as dt
+# from datetime import date,time
+import time
+from time import mktime
+from datetime import datetime,timedelta
+from dateutil.relativedelta import relativedelta
+
+s='20210101'
+e='20210102'
+# 字符串转日期
+s_date=datetime.strptime(s,'%Y%m%d')
+e_date=datetime.strptime(e,'%Y%m%d')
+#今天
+today=datetime.today().date().strftime('%Y%m%d')
+# 上一天
+lastday=(datetime.today().date() - timedelta(days=1)).strftime('%Y%m%d')
+#上一年
+lastyear=(datetime.today().date() - relativedelta(months=12)).strftime('%Y%m%d')
+print(s_date) ,print(e_date),print(today),print(lastday),print(lastyear)
+# (e_date-s_date).month
