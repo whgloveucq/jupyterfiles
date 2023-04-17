@@ -10,6 +10,8 @@ echo "第一步：查看当前的git仓库状态，可以使用git status"
 git status
 echo "第二步：更新全部"
 git add ${file_name}
+git config --global user.email "whgloveu@hotmail.com"
+git config --global user.name "whgloveucq"
 echo "第三步：接着输入git commit -m "$description""
 git commit -m "${description}"
 echo "第四步：先git pull,拉取当前分支最新代码"
