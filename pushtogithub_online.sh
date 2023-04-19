@@ -11,8 +11,8 @@ git status
 echo "第二步：更新全部"
 git add ${file_name}
 
-git config --global user.email "whgloveu@hotmail.com"
-git config --global user.name "whgloveucq"
+git config  user.email "whgloveu@hotmail.com"
+git config  user.name "whgloveucq"
 #git remote set-url origin  https://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@github.com/whgloveucq/jupyterfiles.git
 echo "第三步：接着输入git commit -m "$description""
 git commit -m "${description}"
