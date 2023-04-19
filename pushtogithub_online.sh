@@ -21,7 +21,8 @@ git config --global pull.rebase true
 git pull 
 echo "第五步：push到远程master分支上"
 git remote rm origin
-git remote add origin git@github.com:whgloveucq/jupyterfiles.git
+#git remote add origin git@github.com:whgloveucq/jupyterfiles.git
+git remote add origin https://github.com/whgloveucq/jupyterfiles.git
 #git remote set-url origin  https://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@github.com/whgloveucq/jupyterfiles.git
 git push -u  origin master
 echo "如有问题，请查看.git 目录下的config文件"
