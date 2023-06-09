@@ -1,0 +1,12 @@
+{  
+  "name": "John Smith",  
+  "age": 30,  
+  "isMarried": true,  
+  "hobbies": ["reading", "hiking", "swimming"],  
+  "address": {  
+    "street": "123 Main St",  
+    "city": "Anytown 重庆",  
+    "state": "CA",  
+    "zip": "12345"  
+  }  
+}
