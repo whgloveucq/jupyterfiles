@@ -1203,7 +1203,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "b65fbf70",
+=======
    "id": "191bebf0",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "## 31从集合创建"
@@ -1212,7 +1216,11 @@
   {
    "cell_type": "code",
    "execution_count": 23,
+<<<<<<< HEAD
+   "id": "2a4b7ea5",
+=======
    "id": "56a1accc",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1223,7 +1231,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "2d37f237",
+=======
    "id": "f8e9be18",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "# 1-3 数据存储"
@@ -1231,7 +1243,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "9f5fd375",
+=======
    "id": "87a66829",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "##  32 保存为 CSV"
@@ -1240,7 +1256,11 @@
   {
    "cell_type": "code",
    "execution_count": 26,
+<<<<<<< HEAD
+   "id": "6945527a",
+=======
    "id": "4f657dd4",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1251,7 +1271,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "18d60a5d",
+=======
    "id": "3ce72796",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "## 33 保存为 CSV｜指定列"
@@ -1260,7 +1284,11 @@
   {
    "cell_type": "code",
    "execution_count": 28,
+<<<<<<< HEAD
+   "id": "0d63ff75",
+=======
    "id": "65865266",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1272,7 +1300,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "181e6f47",
+=======
    "id": "cc01a556",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "## 34 保存为 CSV｜取消索引¶"
@@ -1281,7 +1313,11 @@
   {
    "cell_type": "code",
    "execution_count": 29,
+<<<<<<< HEAD
+   "id": "e913ee0f",
+=======
    "id": "44ecb1cc",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1293,7 +1329,11 @@
   },
   {
    "cell_type": "markdown",
+<<<<<<< HEAD
+   "id": "98761584",
+=======
    "id": "c8c5701d",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "## 35 保存为 CSV｜标记缺失值"
@@ -1302,7 +1342,11 @@
   {
    "cell_type": "code",
    "execution_count": 38,
+<<<<<<< HEAD
+   "id": "83845c72",
+=======
    "id": "e675dd39",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [
     {
@@ -1378,7 +1422,8 @@
   },
   {
    "cell_type": "markdown",
-   "id": "55f35567",
+<<<<<<< HEAD
+   "id": "5e629c7b",
    "metadata": {},
    "source": [
     "## 36 保存为CSV｜压缩"
@@ -1387,7 +1432,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "432af28c",
+   "id": "1c063812",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1396,13 +1441,25 @@
     "data = {'name': ['Tom', 'Jerry', 'Bob'], 'age': [20, 22, 21], 'salary': [5000, None, 8000]}  \n",
     "df = pd.DataFrame(data)  \n",
     "  \n",
-    "with gzip.open('Data/data.csv.gz', 'wt', newline='') as f:  \n",
-    "    df.to_csv(f, index=False, na_rep='数据缺失', float_format='%.2f')"
+    "df.to_csv('Data/data.csv', na_rep='数据缺失', float_format='%.2f', index=False)\n",
+    "# na_rep='数据缺失' 表示使用字符串 \"数据缺失\" 表示缺失值。float_format='%.2f' 表示将浮点数格式化为保留两位小数的字符串。index=False 表示不保存 DataFrame 的索引信息。"
+=======
+   "id": "2d08a6a2",
+   "metadata": {},
+   "source": [
+    "## 36 保存为CSV｜压缩"
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "5334d20b",
+   "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": null,
+   "id": "acb4762c",
+=======
+   "execution_count": 6,
+   "id": "1c063812",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "source": [
     "## 37 保存为 Excel"
@@ -1410,12 +1467,23 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 41,
+   "id": "d35b55b2",
+=======
    "execution_count": 5,
    "id": "47864f2e",
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    "metadata": {},
    "outputs": [],
    "source": [
+    "import gzip  \n",
     "data = {'name': ['Tom', 'Jerry', 'Bob'], 'age': [20, 22, 21], 'salary': [5000, None, 8000]}  \n",
+<<<<<<< HEAD
+    "df = pd.DataFrame(data)    \n",
+    "with gzip.open('Data/data.csv.gz', 'wt', newline='') as f:  \n",
+    "    df.to_csv(f, index=False, na_rep='数据缺失', float_format='%.2f')"
+=======
     "df = pd.DataFrame(data)  \n",
     "  \n",
     "df.to_excel('Data/data.xlsx', index=False)"
@@ -1423,7 +1491,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5e262fff",
+   "id": "c149da02",
    "metadata": {},
    "source": [
     "## 38 保存为 JSON"
@@ -1432,7 +1500,7 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "52a00d03",
+   "id": "21aa554f",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1455,11 +1523,12 @@
     "  \n",
     "df.to_csv('Data/data.csv', na_rep='数据缺失', float_format='%.2f', index=False)\n",
     "# na_rep='数据缺失' 表示使用字符串 \"数据缺失\" 表示缺失值。float_format='%.2f' 表示将浮点数格式化为保留两位小数的字符串。index=False 表示不保存 DataFrame 的索引信息。"
+>>>>>>> 30db99f071027fb141dda03a62bf79364fd24b05
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "8c130a61",
+   "id": "c22743d7",
    "metadata": {},
    "source": [
     "## 39  保存为 Markdown"
@@ -1468,7 +1537,7 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "82cb4e3c",
+   "id": "8262ed71",
    "metadata": {},
    "outputs": [
     {
@@ -1507,15 +1576,15 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "91b381b0",
+   "id": "1c971ef5",
    "metadata": {},
    "outputs": [],
    "source": []
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
-   "id": "4136fc88",
+   "execution_count": 12,
+   "id": "a2b11547",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1537,7 +1606,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "5653e4b0",
+   "id": "e842a12d",
    "metadata": {},
    "outputs": [],
    "source": []
