@@ -8,11 +8,11 @@
 
 </head>
 <body >
-    <div id="251c8124dbb241c3aa7850bd5e575270" class="chart-container" style="width:900px; height:500px; "></div>
+    <div id="473f9600c56b4a78b38cdefd2fd595d5" class="chart-container" style="width:900px; height:500px; "></div>
     <script>
-        var chart_251c8124dbb241c3aa7850bd5e575270 = echarts.init(
-            document.getElementById('251c8124dbb241c3aa7850bd5e575270'), 'white', {renderer: 'canvas'});
-        var option_251c8124dbb241c3aa7850bd5e575270 = {
+        var chart_473f9600c56b4a78b38cdefd2fd595d5 = echarts.init(
+            document.getElementById('473f9600c56b4a78b38cdefd2fd595d5'), 'white', {renderer: 'canvas'});
+        var option_473f9600c56b4a78b38cdefd2fd595d5 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -35,10 +35,56 @@
         "#9a60b4",
         "#ea7ccc"
     ],
-    "series": [],
+    "series": [
+        {
+            "type": "map",
+            "name": "ww",
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "map": "china",
+            "data": [
+                {
+                    "name": "\u5317\u4eac",
+                    "value": 18
+                },
+                {
+                    "name": "\u6c5f\u82cf",
+                    "value": 15
+                },
+                {
+                    "name": "\u4e0a\u6d77",
+                    "value": 10
+                },
+                {
+                    "name": "\u5e7f\u4e1c",
+                    "value": 9
+                },
+                {
+                    "name": "\u6e56\u5317",
+                    "value": 7
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "zlevel": 0,
+            "z": 2,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": true,
+            "emphasis": {}
+        }
+    ],
     "legend": [
         {
-            "data": [],
+            "data": [
+                "ww"
+            ],
             "selected": {},
             "show": true,
             "padding": 5,
@@ -121,7 +167,7 @@
         "borderWidth": 0
     }
 };
-        chart_251c8124dbb241c3aa7850bd5e575270.setOption(option_251c8124dbb241c3aa7850bd5e575270);
+        chart_473f9600c56b4a78b38cdefd2fd595d5.setOption(option_473f9600c56b4a78b38cdefd2fd595d5);
     </script>
 </body>
 </html>
